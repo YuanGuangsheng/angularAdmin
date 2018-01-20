@@ -1,0 +1,140 @@
+{
+  "menu": {
+    "GAME_SELECT": "选择内容",
+    "HOME": "首页",
+    "TOP": "顶级菜单",
+    "action": {
+      "LIST": "列表",
+      "EDIT": "编辑",
+      "ADD": "添加",
+      "INFO": "查看",
+      "DEL": "删除",
+      "EXPORT": "导出",
+      "SYNC": "同步",
+      "REPLY": "回复",
+      "EDIT_ICON": "编辑图标"
+    },
+    "help": {
+      "HOME": "首页"
+    },
+    "module": {
+      "CONTENT": "内容管理"
+    },
+    "news":{
+      "NEWS": "新闻内容",
+      "NEWS_LIST": "新闻列表",
+      "NEWS_ADD": "添加新闻"
+    }
+  },
+  "header": {
+    "navbar": {
+      "NOTIFICATIONS": "通知"
+    },
+    "user": {
+      "SETTING": "个人设置",
+      "EDIT_PWD": "修改密码",
+      "LOGOUT": "注销登录",
+      "LOCKME": "锁屏",
+      "LOCK_TIPS": "请输入密码进入"
+    },
+    "setting": {
+        "SETTING": "个人设置",
+        "FIXED_HEADER": "固定头部",
+        "FIXED_ASIDE": "固定侧边栏",
+        "DOCK_ASIDE": "切换侧边栏样式",
+        "BOXED_LAYOUT": "切换页面样式",
+        "THEME": "主题",
+        "AVATAR": "头像"
+    },
+    "editPwd":{
+      "EDIT_PWD": "修改密码",
+      "OLD_PASSWORD": "原密码",
+      "NEW_PASSWORD": "新密码",
+      "CONFIRM_PWD": "确认密码",
+      "PASSWORD_NOT_MATCH": "密码不匹配"
+    }
+  },
+  "home": {
+    "WELCOME": "欢迎使用后台管理系统",
+    "RECENT_LOG": "操作历史"
+  },
+  "button": {
+    "QUERY": "查询",
+    "SYNC": "同步",
+    "BACK": "返回",
+    "ADD": "添加",
+    "DELETE": "删除",
+    "EDIT": "编辑",
+    "VIEW": "查看",
+    "SEARCH": "搜索",
+    "SAVE": "保存",
+    "CANCEL": "取消",
+    "OK": "确定",
+    "CLOSE": "关闭",
+    "REPLY": "回复",
+    "CHECK": "检查",
+    "EXPORT_EXCEL": "导出Excel",
+    "UP": "上移",
+    "DOWN": "下移",
+    "UP_TOP": "移至顶部",
+    "DOWN_FOOT": "移至底部"
+  },
+  "dialog": {
+      "DIALOG": "对话框",
+      "ALERT": "提示",
+      "LOADING": "加载中..."
+  },
+  "tips": {
+      "YES": "是",
+      "NO": "否",
+      "SUCCESS": "成功",
+      "FAIL": "失败",
+      "ERROR": "错误",
+      "SYSTEM_ERROR": "系统错误",
+      "EXIT": "确定要退出吗?",
+      "DELETE": "确定要删除吗?",
+      "GAME_HAS_SELECT": "当前内容已经是选择的内容了",
+      "NOT_SELECT_RECORD": "未选择数据"
+  },
+  "page": {
+    "FIRST": "首页",
+    "NEXT": "下一页",
+    "PREV": "上一页",
+    "LAST": "尾页",
+    "OPERATION": "操作",
+    "STR": "从 %{start}% 到 %{end}% / 共 %{total}% 条记录"
+  },
+  "form": {
+    "MUST": "*必填"
+  },
+  "model": {
+    "news": {
+      "ID": "ID",
+      "TITLE": "标题",
+      "CONTENT": "内容",
+      "CREATED_AT": "创建时间",
+      "AUTHOR": "作者"
+    },
+    "common": {
+      "ALL": "全部",
+      "ALL_SELECT": "全选",
+      "NAME": "名称",
+      "LANGUAGE": "语言",
+      "CAPTCHA": "验证码",
+      "REFRESH": "刷新",
+      "PASSWORD": "密码",
+      "EMAIL": "邮箱",
+      "GAME": "内容",
+      "STATUS": "状态",
+      "ICON": "图标",
+      "SORT": "排序",
+      "LOGIN": "登录",
+      "EXAMPLE": "例子",
+      "IS_ACTIVE": "激活状态",
+      "CREATED_AT":"创建时间",
+      "CREATED_NAME":"创建者",
+      "UPDATED_AT":"更新时间",
+      "UPDATED_NAME":"更新者"
+    }
+  }
+}

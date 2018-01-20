@@ -1,0 +1,63 @@
+<div id="login_page">
+    <header class="container-fluid">
+        <img class="logo" src="img/login_logo.png"/>
+    </header>
+
+
+    <div class="container w-xxl w-auto-xs login_form" style="height: 100%;" ng-controller="LoginCtrl" ng-init="app.settings.container = false;app.setting.headerFixed=false;">
+      <div class="m-b-lg">
+
+
+          <div class="panel panel-default login_panel">
+              <div class="panel-body">
+                  <a href class="navbar-brand block">{{app.name}}</a>
+
+                  <form name="form">
+                      <div class="text-danger wrapper text-center" ng-show="authError">
+                          {{authError}}
+                      </div>
+                      <div class="list-group list-group-sm">
+                          <div class="list-group-item">
+                              <ui-select ng-model="app.langs.selected" theme="bootstrap">
+                                  <ui-select-match class="no-border" placeholder="{{ 'model.common.LANGUAGE' | translate }}" style="padding-right:30px;">
+                                      {{$select.selected.name}}
+                                  </ui-select-match>
+                                  <ui-select-choices repeat="item in app.langs | filter: $select.search">
+                                      <span ng-bind-html="item.name"></span>
+                                  </ui-select-choices>
+                              </ui-select>
+                          </div>
+                          <div class="list-group-item">
+                              <input type="text" placeholder="{{ 'model.admin.USERNAME' | translate }}"
+                                     class="form-control no-border" ng-model="user.email" required>
+                          </div>
+                          <div class="list-group-item">
+                              <input type="password" placeholder="{{ 'model.common.PASSWORD' | translate }}"
+                                     class="form-control no-border" ng-model="user.password" required>
+                          </div>
+                          <div class="list-group-item" ng-show="show_vcode">
+                              <input type="text" placeholder="{{ 'model.common.CAPTCHA' | translate }}" class="form-control no-border vcode_input" ng-model="user.vcode">
+                              <img src="" alt="{{ 'model.common.CAPTCHA' | translate }}" title="{{ 'model.common.REFRESH' | translate }}" ng-click="refresh_captcha()" id="captcha" style="cursor: pointer">
+                          </div>
+                          <div class="list-group-item">
+                              <label class="i-checks">
+                                  <input checked="" value="" type="checkbox" ng-model="user.remember">
+                                  <i></i>
+                                  {{ 'model.admin.REMEMBER' | translate }}
+                              </label>
+                          </div>
+                      </div>
+                      <button type="submit" class="submitBtn btn btn-lg btn-primary btn-block" ng-click="login()"
+                              ng-disabled='form.$invalid' translate="model.common.LOGIN">登录
+                      </button>
+                  </form>
+              </div>
+          </div>
+      </div>
+    </div>
+    <footer class="container-fluid">
+        <p>
+            <small class="text-muted">{{app.name}} &copy; {{app.copyright}}</small>
+        </p>
+    </footer>
+</div>

@@ -1,0 +1,40 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3" translate="header.editPwd.EDIT_PWD">修改密码</h1>
+</div>
+
+<div class="wrapper-md" data-ng-controller="EditPwdCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form class="form-horizontal" name="form">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" translate="header.editPwd.OLD_PASSWORD">原密码</label>
+
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" ng-model="user.old_password" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" translate="header.editPwd.NEW_PASSWORD">新密码</label>
+
+                    <div class="col-sm-4">
+                        <input type="password"  class="form-control" ng-model="user.new_password" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" translate="header.editPwd.CONFIRM_PWD">确认密码</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" ng-model="user.confirm_password" required/>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button class="btn btn-primary" ng-click="save()" ><i class="fa fa-save"></i> <span translate="button.SAVE">保存</span></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

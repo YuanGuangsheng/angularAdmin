@@ -1,0 +1,14 @@
+<div class="modal-over bg-black" data-ng-controller="LockCtrl">
+    <div class="modal-center animated fadeInUp text-center" style="width:200px;margin:-100px 0 0 -100px;">
+        <div class="thumb-lg">
+            <img src="{{session.admin.avatar}}" class="img-circle">
+        </div>
+        <p class="h4 m-t m-b">{{session.admin.name}}</p>
+        <div class="input-group">
+            <input type="password" ng-model="admin.password" class="form-control text-sm btn-rounded no-border" placeholder="{{'header.user.LOCK_TIPS' | translate}}">
+      <span class="input-group-btn">
+        <a ng-click="Unlock()" class="btn btn-success btn-rounded no-border"><i class="fa fa-arrow-right"></i></a>
+      </span>
+        </div>
+    </div>
+</div>

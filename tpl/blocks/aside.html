@@ -1,0 +1,23 @@
+<div class="aside-wrap">
+    <!-- if you want to use a custom scroll when aside fixed, use the slimScroll
+      <div class="navi-wrap" ui-jq="slimScroll" ui-options="{height:'100%', size:'8px'}">
+    -->
+    <div class="navi-wrap">
+        <!-- user -->
+        <div class="clearfix hidden-xs text-center" id="aside-user">
+            <div class="wrapper">
+                <span class="thumb-lg w-auto-folded avatar m-t-sm">
+                    <img ng-src="{{session.admin.icon}}" class="img-full" alt="...">
+                </span>
+            </div>
+            <div class="line dk hidden-folded"></div>
+        </div>
+        <!-- / user -->
+
+        <!-- nav -->
+        <nav ui-nav class="navi" ng-include="'tpl/blocks/nav.html'"></nav>
+        <!-- nav -->
+
+        <!-- / aside footer -->
+    </div>
+</div>

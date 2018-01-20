@@ -1,0 +1,63 @@
+<ul class="bg-light lter b-b wrapper-md breadcrumb">
+    <li>
+        <i class="icon-home icon"></i>
+        <a ui-sref="app.home" translate="menu.HOME">首页</a>
+    </li>
+    <li>
+        <a ui-sref="app.system.menu" translate="menu.news.NEWS">新闻管理</a>
+    </li>
+    <li class="active" translate="menu.news.NEWS_ADD">添加新闻</li>
+</ul>
+
+<div class="wrapper-md" data-ng-controller="NewsAddCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">
+            <button class="btn btn-default" ui-sref="app.news.list"><i class="fa fa-reply"></i> <span translate="button.BACK">返回</span></button>
+        </div>
+
+        <input type="hidden" name="id" ng-model="news.id" />
+        <div class="panel-body">
+            <div class="form-horizontal">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" translate="model.news.TITLE">标题</label>
+
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="name" ng-model="news.title">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" translate="model.news.AUTHOR">作者</label>
+
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="name" ng-model="news.author">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" translate="model.news.CREATED_AT">日期</label>
+
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="name" ng-model="news.created_at">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" translate="model.news.CONTENT">内容</label>
+
+                    <div class="col-sm-4">
+                        <textarea class="form-control" ng-model="news.content" rows="10"></textarea>
+                    </div>
+                </div>
+
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button class="btn btn-primary" ng-click="save()"><i class="fa fa-save"></i> <span translate="button.SAVE">保存</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

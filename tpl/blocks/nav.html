@@ -1,0 +1,41 @@
+<!-- list -->
+<ul class="nav">
+    <li>
+        <a ui-sref="app.home">
+            <i class="icon-home icon text-success-lter"></i>
+            <span translate="menu.HOME">首页</span>
+        </a>
+    </li>
+</ul>
+
+<ul class="nav" ng-repeat="m1 in session.menus">
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+      <span translate="menu.{{m1.name}}">{{m1.name}}</span>
+  </li>
+
+  <li ng-repeat="m2 in m1.sub">
+      <a href class="auto">
+    <span class="pull-right text-muted">
+      <i class="fa fa-fw fa-angle-right text"></i>
+      <i class="fa fa-fw fa-angle-down text-active"></i>
+    </span>
+          <i class="{{m2.icon}} icon text-info-lter"></i>
+          <span class="font-bold" translate="menu.{{m2.name}}">{{m2.name}}</span>
+      </a>
+      <ul class="nav nav-sub dk">
+          <li class="nav-sub-header">
+              <a href>
+                  <span translate="menu.{{m2.name}}">{{m2.name}}</span>
+              </a>
+          </li>
+          <li ui-sref-active="active" ng-repeat="m3 in m2.sub">
+              <a ui-sref="{{m3.sref}}">
+                  <span translate="menu.{{m3.name}}">{{m3.name}}</span>
+              </a>
+          </li>
+      </ul>
+  </li>
+
+  <li class="line dk hidden-folded"></li>
+</ul>
+<!-- / list -->

@@ -1,0 +1,240 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false; 
+    app.settings.asideDock = false;
+  "  ng-controller="HomeCtrl">
+    <!-- main -->
+    <div class="col">
+        <!-- main header -->
+        <div class="bg-light lter b-b wrapper-md">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <small class="text-muted" translate="home.WELCOME">欢迎使用后台管理系统</small>
+                </div>
+                <div class="col-sm-6 text-right hidden-xs">
+
+                </div>
+            </div>
+        </div>
+        <!-- / main header -->
+        <div class="wrapper-md">
+            <!-- stats -->
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="row row-sm text-center">
+                        <div class="col-xs-6">
+                            <div class="panel padder-v item">
+                                <div class="h1 text-info font-thin h1">521</div>
+                                <span class="text-muted text-xs">新闻</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href class="block panel padder-v bg-primary item">
+                                <span class="text-white font-thin h1 block">930</span>
+                                <span class="text-muted text-xs">点击数</span>
+                            </a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href class="block panel padder-v bg-info item">
+                                <span class="text-white font-thin h1 block">432</span>
+                                <span class="text-muted text-xs">管理员</span>
+                            </a>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="panel padder-v item">
+                                <div class="font-thin h1">129</div>
+                                <span class="text-muted text-xs">操作数量</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 m-b-md">
+                            <div class="r bg-light dker item hbox no-border">
+                                <div class="col dk padder-v r-r">
+                                    <div class="text-primary-dk font-thin h1"><span>300</span></div>
+                                    <span class="text-muted text-xs">2017年1月1日</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="panel wrapper">
+                        <label class="i-switch bg-warning pull-right" ng-init="showSpline=true">
+                            <input type="checkbox" ng-model="showSpline">
+                            <i></i>
+                        </label>
+                        <h4 class="font-thin m-t-none m-b text-muted">新闻</h4>
+
+                        <div ui-jq="plot" ui-refresh="showSpline" ui-options="
+              [
+                { data: {{d0_1}}, label:'访问', points: { show: true, radius: 1}, splines: { show: showSpline, tension: 0.4, lineWidth: 1, fill: 0.8 } },
+                { data: {{d0_2}}, label:'点击', points: { show: true, radius: 1}, splines: { show: showSpline, tension: 0.4, lineWidth: 1, fill: 0.8 } }
+              ], 
+              {
+                colors: ['{{app.color.info}}', '{{app.color.primary}}'],
+                series: { shadowSize: 3 },
+                xaxis:{ font: { color: '#a1a7ac' } },
+                yaxis:{ font: { color: '#a1a7ac' }, max:20 },
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },
+                tooltip: true,
+                tooltipOpts: { content: 'Visits of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 10, y: -25 } }
+              }
+            " style="height:246px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- / stats -->
+
+            <!-- service -->
+            <div class="panel hbox hbox-auto-xs no-border">
+                <div class="col wrapper">
+                    <i class="fa fa-circle-o text-info m-r-sm pull-right"></i>
+                    <h4 class="font-thin m-t-none m-b-none text-primary-lt">实时点击</h4>
+                    <span class="m-b block text-sm text-muted">实时点击曲线(11:40更新)</span>
+
+                    <div ui-jq="plot" ui-options="
+            [
+              { data: {{d4}}, lines: { show: true, lineWidth: 1, fill:true, fillColor: { colors: [{opacity: 0.2}, {opacity: 0.8}] } } }
+            ], 
+            {
+              colors: ['{{app.color.light}}'],
+              series: { shadowSize: 3 },
+              xaxis:{ show:false },
+              yaxis:{ font: { color: '#a1a7ac' } },
+              grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },
+              tooltip: true,
+              tooltipOpts: { content: '%s of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 10, y: -25 } }
+            }
+          " style="height:240px">
+                    </div>
+                </div>
+            </div>
+            <!-- / service -->
+
+            <!-- tasks -->
+            <div class="panel wrapper">
+                <div class="row">
+                    <div class="col-md-6 b-r b-light no-border-xs">
+                        <a href class="text-muted pull-right text-lg"><i class="icon-arrow-right"></i></a>
+                        <h4 class="font-thin m-t-none m-b-md text-muted">我的后台任务</h4>
+
+                        <div class=" m-b">
+                            <div class="m-b">
+                                <span class="label text-base bg-warning pos-rlt m-r"><i
+                                        class="arrow right arrow-warning"></i> 19:30</span>
+                                <a href>发布新闻</a>
+                            </div>
+                            <div class="m-b">
+                                <span class="label text-base bg-info pos-rlt m-r"><i class="arrow right arrow-info"></i> 12:30</span>
+                                <a href>审核</a>
+                            </div>
+                            <div class="m-b">
+                                <span class="label text-base bg-primary pos-rlt m-r"><i
+                                        class="arrow right arrow-primary"></i> 10:30</span>
+                                <a href>发布任务</a>
+                            </div>
+                            <div class="m-b">
+                                <span class="label text-base bg-light pos-rlt m-r"><i
+                                        class="arrow right arrow-light"></i> 07:30</span>
+                                <a href>审核任务</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row row-sm">
+                            <div class="col-xs-6 text-center">
+                                <div ui-jq="easyPieChart" ui-options="{
+                    percent: 75,
+                    lineWidth: 4,
+                    trackColor: '{{app.color.light}}',
+                    barColor: '{{app.color.primary}}',
+                    scaleColor: false,
+                    size: 115,
+                    rotate: 90,
+                    lineCap: 'butt'
+                  }" class="inline m-t">
+                                    <div>
+                                        <span class="text-primary h4">75%</span>
+                                    </div>
+                                </div>
+                                <div class="text-muted font-bold text-xs m-t m-b">完成进度</div>
+                            </div>
+                            <div class="col-xs-6 text-center">
+                                <div ui-jq="easyPieChart" ui-options="{
+                    percent: 50,
+                    lineWidth: 4,
+                    trackColor: '{{app.color.light}}',
+                    barColor: '{{app.color.info}}',
+                    scaleColor: false,
+                    size: 115,
+                    rotate: 180,
+                    lineCap: 'butt'
+                  }" class="inline m-t">
+                                    <div>
+                                        <span class="text-info h4">50%</span>
+                                    </div>
+                                </div>
+                                <div class="text-muted font-bold text-xs m-t m-b">成功率</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- / tasks -->
+        </div>
+    </div>
+    <!-- / main -->
+    <!-- right col -->
+    <div class="col w-md bg-white-only b-l bg-auto no-border-xs">
+        <!--<tabset class="nav-tabs-alt" justified="true">-->
+            <!--<tab>-->
+                <!--<tab-heading>-->
+                    <!--<i class="glyphicon glyphicon-th text-md text-muted wrapper-sm"></i>-->
+                <!--</tab-heading>-->
+                <div class="wrapper-md">
+                    <div class="m-b-sm text-md">
+                        <span>快捷入口</span>
+                        <a style="float: right" ui-sref="app.admin.shortcut">设置</a>
+                    </div>
+                    <div class="list-group" ng-show="session.shortcut.length <= 0">
+                        <a href class="list-group-item">
+                            <i class="fa fa-envelope fa-fw m-r-xs"></i> 新闻管理
+                        </a>
+                        <a href class="list-group-item">
+                            <i class="fa fa-eye fa-fw m-r-xs"></i> 新闻列表
+                        </a>
+                        <a href class="list-group-item">
+                            <i class="fa fa-comments-o fa-fw m-r-xs"></i> 添加新闻
+                        </a>
+                        <a href class="list-group-item">
+                            <i class="fa fa-bookmark fa-fw m-r-xs"></i> 新闻管理
+                        </a>
+                        <a href class="list-group-item">
+                            <i class="fa fa-bell fa-fw m-r-xs"></i> 新闻列表
+                        </a>
+                        <a href class="list-group-item">
+                            <i class="fa fa-clock-o fa-fw m-r-xs"></i> 添加新闻
+                        </a>
+                    </div>
+                    <div class="list-group" ng-show="session.shortcut.length > 0">
+                        <a ui-sref="{{qm.sref}}" class="list-group-item" ng-repeat="qm in session.shortcut">
+                            <span translate="menu.{{qm.name}}">{{qm.name}}</span>
+                        </a>
+                    </div>
+                </div>
+
+        <div class="padder-md">
+            <!-- streamline -->
+            <div class="m-b text-md" translate="home.RECENT_LOG">操作历史</div>
+            <div class="streamline b-l m-b">
+                <div class="sl-item" ng-repeat="log in recent_log">
+                    <div class="m-l">
+                        <div class="text-muted">{{log.time}}</div>
+                        <p>{{log.action}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- / streamline -->
+        </div>
+    </div>
+    <!-- / right col -->
+</div>

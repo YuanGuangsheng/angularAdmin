@@ -1,0 +1,22 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3" translate="menu.news.NEWS_LIST">新闻列表</h1>
+</div>
+<div class="wrapper-md" data-ng-controller="NewsListCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                    <label class="control-label" translate="model.news.TITLE">标题</label>
+                    <input type="text" ng-model="search.name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success" ng-click="query()"><i class="fa fa-search"></i> {{ 'button.QUERY' |
+                        translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="panel-body" id="table"></div>
+    </div>
+
+</div>

@@ -1,0 +1,79 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3" translate="header.setting.SETTING">个人设置</h1>
+</div>
+
+<div class="wrapper-md" data-ng-controller="settingCtrl">
+    <div class="admin_setting panel panel-default">
+        <div class="panel-body">
+            <form class="form-horizontal" id="setting_form">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"  translate="header.setting.BOXED_LAYOUT">切换页面样式</label>
+                    <div class="col-sm-10">
+                        <label class="i-switch m-t-xs m-r">
+                            <input type="checkbox" ng-model="app.settings.container">
+                            <i></i>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" translate="header.setting.THEME">主题</label>
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <div class="col-lg-3" ng-repeat = 'theme in app.themes'>
+                                <label class="i-checks block m-b" ng-click="setTheme(theme.id)">
+                                    <input type="radio" name="a" ng-model="app.settings.themeID" value="{{theme.id}}">
+                                      <span class="block bg-light clearfix pos-rlt">
+                                        <span class="active pos-abt w-full h-full bg-black-opacity text-center">
+                                          <i class="glyphicon glyphicon-ok text-white m-t-xs"></i>
+                                        </span>
+                                        <b class="{{theme.navbarHeaderColor}} header"></b>
+                                        <b class="{{theme.navbarCollapseColor}} header"></b>
+                                        <b class="{{theme.asideColor}}"></b>
+                                      </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" translate="header.setting.AVATAR">头像</label>
+                    <div class="col-sm-10">
+                        <div class="m-b">
+                            <input type="file" id="fileInput" accept="image/*"/>
+                        </div>
+                        <div class="hbox hbox-auto-xs">
+                            <div class="col">
+                                <div class="wrapper-sm b-a bg-white m-r-xs m-b-xs">
+                                    <div class="bg-light" style="height:320px">
+                                        <img-crop
+                                                image="myImage"
+                                                result-image="myCroppedImage"
+                                                result-image-size="160"
+                                                area-type="{{cropType}}"
+                                        ></img-crop>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="inline bg-white wrapper-sm b-a">
+                                    <div class="bg-light">
+                                        <img ng-src="{{myCroppedImage}}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button class="btn btn-primary" ng-click="save()"><i class="fa fa-save"></i> <span translate="button.SAVE">保存</span></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

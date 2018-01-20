@@ -1,0 +1,40 @@
+{
+  "status": 0,
+  "msg": "OK",
+  "data": {
+    "admin": {
+      "id": "1",
+      "email": "admin@admin.com",
+      "name": "admin",
+      "icon": "img/default_icon.png",
+      "avatar": "img/default_admin_avatar.jpg",
+      "is_admin": "1"
+    },
+    "language" : "zh_cn",
+    "lock" : false,
+    "menus": [
+      {
+        "id" : 1,
+        "name": "module.CONTENT",
+        "sub": [
+          {
+            "id": 11,
+            "name": "news.NEWS",
+            "sub": [
+              {
+                "id" : 111,
+                "name": "news.NEWS_LIST",
+                "sref": "app.news.list"
+              },
+              {
+                "id" : 112,
+                "name": "news.NEWS_ADD",
+                "sref": "app.news.add_news"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
